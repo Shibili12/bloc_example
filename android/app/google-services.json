@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558286162659",
+    "project_id": "notifactionusingbloc",
+    "storage_bucket": "notifactionusingbloc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558286162659:android:4c6779c996713ea7acd3d6",
+        "android_client_info": {
+          "package_name": "com.example.bloc_example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxXBAz2fA6epOxeuV2UREKmzzE7ApiyX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

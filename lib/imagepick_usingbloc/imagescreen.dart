@@ -21,7 +21,10 @@ class Imagescreen extends StatelessWidget {
                 builder: (context, state) {
                   return state.file == null
                       ? const CircularProgressIndicator()
-                      : Image.file(File(state.file!.path.toString()));
+                      : Image.file(
+                          File(state.file!.path.toString()),
+                          fit: BoxFit.cover,
+                        );
                 },
               ),
             ),
