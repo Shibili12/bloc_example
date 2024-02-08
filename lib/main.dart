@@ -1,3 +1,6 @@
+import 'package:bloc_example/apicrud/bloc/cart_bloc.dart';
+import 'package:bloc_example/apicrud/bloc/fetch_bloc.dart';
+import 'package:bloc_example/apicrud/bloc/user_bloc.dart';
 import 'package:bloc_example/firebase_options.dart';
 import 'package:bloc_example/imagepick_usingbloc/bloc/image_picker_bloc.dart';
 import 'package:bloc_example/imagepick_usingbloc/imagescreen.dart';
@@ -36,6 +39,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => RazorpayBloc(),
         ),
+        BlocProvider(create: (context) => FetchBloc()),
+        BlocProvider(create: (context) => UserBloc()),
+        BlocProvider(create: (context) => CartBloc()),
       ],
       child: MaterialApp(
         home: Paymentscreen(),
