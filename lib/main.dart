@@ -5,6 +5,8 @@ import 'package:bloc_example/locationfetch_using_bloc/bloc/location_bloc.dart';
 import 'package:bloc_example/locationfetch_using_bloc/location_homepage.dart';
 import 'package:bloc_example/notification_using_bloc/bloc/notification_bloc.dart';
 import 'package:bloc_example/notification_using_bloc/notificationpage.dart';
+import 'package:bloc_example/payment_integration/paymentscreen.dart';
+import 'package:bloc_example/payment_integration/bloc/razorpay_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,9 +33,15 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => NotificationBloc(),
         ),
+        BlocProvider(
+          create: (context) => RazorpayBloc(),
+        ),
       ],
       child: MaterialApp(
-        home: Noticationpage(),
+        home: Paymentscreen(),
+        theme: ThemeData(
+          useMaterial3: false,
+        ),
       ),
     );
   }
