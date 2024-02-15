@@ -1,6 +1,10 @@
-import 'package:bloc_example/apicrud/bloc/cart_bloc.dart';
-import 'package:bloc_example/apicrud/bloc/fetch_bloc.dart';
-import 'package:bloc_example/apicrud/bloc/user_bloc.dart';
+import 'package:bloc_example/apicrud/crud_operations/bloc/cart_bloc.dart';
+import 'package:bloc_example/apicrud/crud_operations/bloc/fetch_bloc.dart';
+import 'package:bloc_example/apicrud/crud_operations/bloc/user_bloc.dart';
+import 'package:bloc_example/apicrud/intialloading_example/bloc/initial_bloc.dart';
+import 'package:bloc_example/apicrud/intialloading_example/page/todoPage.dart';
+import 'package:bloc_example/apicrud/multipleApicall/bloc/multiple_bloc.dart';
+import 'package:bloc_example/apicrud/multipleApicall/pages/homepage.dart';
 import 'package:bloc_example/firebase_options.dart';
 import 'package:bloc_example/imagepick_usingbloc/bloc/image_picker_bloc.dart';
 import 'package:bloc_example/imagepick_usingbloc/imagescreen.dart';
@@ -27,24 +31,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => LocationBloc(),
-        ),
-        BlocProvider(
-          create: (context) => ImagePickerBloc(),
-        ),
-        BlocProvider(
-          create: (context) => NotificationBloc(),
-        ),
-        BlocProvider(
-          create: (context) => RazorpayBloc(),
-        ),
+        BlocProvider(create: (context) => LocationBloc()),
+        BlocProvider(create: (context) => ImagePickerBloc()),
+        BlocProvider(create: (context) => NotificationBloc()),
+        BlocProvider(create: (context) => RazorpayBloc()),
         BlocProvider(create: (context) => FetchBloc()),
         BlocProvider(create: (context) => UserBloc()),
         BlocProvider(create: (context) => CartBloc()),
+        BlocProvider(create: (context) => InitialBloc()),
+        BlocProvider(create: (context) => MultipleBloc()),
       ],
       child: MaterialApp(
-        home: Paymentscreen(),
+        home: Userpage(),
         theme: ThemeData(
           useMaterial3: false,
         ),

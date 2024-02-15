@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_example/apicrud/model/productmodel.dart';
-import 'package:bloc_example/apicrud/sevice/apiservice.dart';
+import 'package:bloc_example/apicrud/crud_operations/model/productmodel.dart';
+import 'package:bloc_example/apicrud/crud_operations/sevice/apiservice.dart';
 
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';

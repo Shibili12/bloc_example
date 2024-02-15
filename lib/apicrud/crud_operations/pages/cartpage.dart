@@ -1,4 +1,4 @@
-import 'package:bloc_example/apicrud/bloc/cart_bloc.dart';
+import 'package:bloc_example/apicrud/crud_operations/bloc/cart_bloc.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

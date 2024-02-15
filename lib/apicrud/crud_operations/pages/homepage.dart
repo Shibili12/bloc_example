@@ -1,7 +1,7 @@
-import 'package:bloc_example/apicrud/bloc/cart_bloc.dart';
-import 'package:bloc_example/apicrud/bloc/fetch_bloc.dart';
-import 'package:bloc_example/apicrud/pages/cartpage.dart';
-import 'package:bloc_example/apicrud/pages/curd_page.dart';
+import 'package:bloc_example/apicrud/crud_operations/bloc/cart_bloc.dart';
+import 'package:bloc_example/apicrud/crud_operations/bloc/fetch_bloc.dart';
+import 'package:bloc_example/apicrud/crud_operations/pages/cartpage.dart';
+import 'package:bloc_example/apicrud/crud_operations/pages/curd_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

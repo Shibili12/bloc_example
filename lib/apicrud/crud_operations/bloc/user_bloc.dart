@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_example/apicrud/model/usermodel.dart';
-import 'package:bloc_example/apicrud/sevice/apiservice.dart';
+import 'package:bloc_example/apicrud/crud_operations/model/usermodel.dart';
+import 'package:bloc_example/apicrud/crud_operations/sevice/apiservice.dart';
 
 import 'package:meta/meta.dart';
 

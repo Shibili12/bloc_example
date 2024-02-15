@@ -1,6 +1,6 @@
-import 'package:bloc_example/apicrud/bloc/user_bloc.dart';
-import 'package:bloc_example/apicrud/model/usermodel.dart';
-import 'package:bloc_example/apicrud/pages/userlist.dart';
+import 'package:bloc_example/apicrud/crud_operations/bloc/user_bloc.dart';
+import 'package:bloc_example/apicrud/crud_operations/model/usermodel.dart';
+import 'package:bloc_example/apicrud/crud_operations/pages/userlist.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

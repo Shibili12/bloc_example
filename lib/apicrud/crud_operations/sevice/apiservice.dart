@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:bloc_example/apicrud/model/productmodel.dart';
-import 'package:bloc_example/apicrud/model/usermodel.dart';
+import 'package:bloc_example/apicrud/crud_operations/model/productmodel.dart';
+import 'package:bloc_example/apicrud/crud_operations/model/usermodel.dart';
 import 'package:http/http.dart';
 
 class Apiservice {
