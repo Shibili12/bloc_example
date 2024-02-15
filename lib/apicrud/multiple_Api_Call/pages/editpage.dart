@@ -1,5 +1,5 @@
-import 'package:bloc_example/apicrud/multipleApicall/bloc/multiple_bloc.dart';
-import 'package:bloc_example/apicrud/multipleApicall/pages/productpage.dart';
+import 'package:bloc_example/apicrud/multiple_Api_Call/bloc/multiple_bloc.dart';
+import 'package:bloc_example/apicrud/multiple_Api_Call/pages/productpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -83,7 +83,7 @@ class EditUser extends StatelessWidget {
                   hintText: "select product",
                 ),
                 onTap: () async {
-                  context.read<MultipleBloc>().add(Getproducts());
+                  context.read<MultipleBloc>().add(GetProducts());
                   final result = await Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => Productpage()));
 

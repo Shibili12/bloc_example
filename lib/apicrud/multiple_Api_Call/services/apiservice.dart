@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:bloc_example/apicrud/multipleApicall/model/productmodel.dart';
-import 'package:bloc_example/apicrud/multipleApicall/model/universitymodel.dart';
-import 'package:bloc_example/apicrud/multipleApicall/model/usermodel.dart';
+import 'package:bloc_example/apicrud/multiple_Api_Call/model/productmodel.dart';
+import 'package:bloc_example/apicrud/multiple_Api_Call/model/universitymodel.dart';
+import 'package:bloc_example/apicrud/multiple_Api_Call/model/usermodel.dart';
 import 'package:http/http.dart';
 
 class Httpservice {

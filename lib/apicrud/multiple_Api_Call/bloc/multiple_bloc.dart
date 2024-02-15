@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_example/apicrud/crud_operations/sevice/apiservice.dart';
-import 'package:bloc_example/apicrud/multipleApicall/model/productmodel.dart';
-import 'package:bloc_example/apicrud/multipleApicall/model/universitymodel.dart';
-import 'package:bloc_example/apicrud/multipleApicall/model/usermodel.dart';
-import 'package:bloc_example/apicrud/multipleApicall/services/apiservice.dart';
+
+import 'package:bloc_example/apicrud/multiple_Api_Call/model/productmodel.dart';
+import 'package:bloc_example/apicrud/multiple_Api_Call/model/universitymodel.dart';
+import 'package:bloc_example/apicrud/multiple_Api_Call/model/usermodel.dart';
+import 'package:bloc_example/apicrud/multiple_Api_Call/services/apiservice.dart';
 import 'package:meta/meta.dart';
 
 part 'multiple_event.dart';
@@ -20,7 +20,7 @@ class MultipleBloc extends Bloc<MultipleEvent, MultipleState> {
       final university = await Httpservice().getUniversity();
       emit(UniversityLoaded(university: university));
     });
-    on<Getproducts>((event, emit) async {
+    on<GetProducts>((event, emit) async {
       emit(UserLoading());
       final product = await Httpservice().getProducts();
       emit(ProductLoaded(products: product));
