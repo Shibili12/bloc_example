@@ -3,8 +3,9 @@ import 'package:bloc_example/apicrud/crud_operations/bloc/fetch_bloc.dart';
 import 'package:bloc_example/apicrud/crud_operations/bloc/user_bloc.dart';
 import 'package:bloc_example/apicrud/intialloading_example/bloc/initial_bloc.dart';
 import 'package:bloc_example/apicrud/intialloading_example/page/todoPage.dart';
-import 'package:bloc_example/apicrud/multipleApicall/bloc/multiple_bloc.dart';
-import 'package:bloc_example/apicrud/multipleApicall/pages/homepage.dart';
+
+import 'package:bloc_example/apicrud/multiple_Api_Call/bloc/multiple_bloc.dart';
+import 'package:bloc_example/apicrud/multiple_Api_Call/pages/homepage.dart';
 import 'package:bloc_example/firebase_options.dart';
 import 'package:bloc_example/imagepick_usingbloc/bloc/image_picker_bloc.dart';
 import 'package:bloc_example/imagepick_usingbloc/imagescreen.dart';

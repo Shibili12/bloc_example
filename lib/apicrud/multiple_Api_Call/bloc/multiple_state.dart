@@ -24,3 +24,9 @@ class ProductLoaded extends MultipleState {
 
   ProductLoaded({required this.products});
 }
+
+class SelectProductstate extends MultipleState {
+  final List<ProductModel> selectedProducts;
+
+  SelectProductstate({required this.selectedProducts});
+}

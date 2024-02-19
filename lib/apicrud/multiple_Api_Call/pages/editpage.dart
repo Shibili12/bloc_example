@@ -21,77 +21,103 @@ class EditUser extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: username,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: username,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: name,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: name,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: email,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: email,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: phone,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: phone,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: controller,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "Select University",
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: controller,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "Select University",
+                  ),
+                  onTap: () {
+                    context.read<MultipleBloc>().add(GetUniversity());
+                    bottomlist(context);
+                  },
                 ),
-                onTap: () {
-                  context.read<MultipleBloc>().add(GetUniversity());
-                  bottomlist(context);
-                },
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextField(
-                controller: productcontroller,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: "select product",
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  controller: productcontroller,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: "select product",
+                  ),
+                  onTap: () {
+                    context.read<MultipleBloc>().add(GetProducts());
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Productpage()));
+                  },
                 ),
-                onTap: () async {
-                  context.read<MultipleBloc>().add(GetProducts());
-                  final result = await Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => Productpage()));
-
-                  productcontroller.text = result.toString();
-                },
               ),
-            ),
-          ],
+              SizedBox(
+                height: 600,
+                child: BlocBuilder<MultipleBloc, MultipleState>(
+                  builder: (context, state) {
+                    switch (state.runtimeType) {
+                      case SelectProductstate:
+                        final newstate = state as SelectProductstate;
+                        return ListView.builder(
+                            itemCount: newstate.selectedProducts.length,
+                            itemBuilder: ((context, index) {
+                              return Card(
+                                child: ListTile(
+                                  title: Text(
+                                      newstate.selectedProducts[index].title!),
+                                  subtitle: Text(newstate
+                                      .selectedProducts[index].price
+                                      .toString()),
+                                ),
+                              );
+                            }));
+                      default:
+                        return SizedBox();
+                    }
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

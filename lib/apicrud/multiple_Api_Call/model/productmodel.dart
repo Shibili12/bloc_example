@@ -18,6 +18,7 @@ class ProductModel {
   Category? category;
   String? image;
   Rating? rating;
+  bool isSelected;
 
   ProductModel({
     this.id,
@@ -27,6 +28,7 @@ class ProductModel {
     this.category,
     this.image,
     this.rating,
+    this.isSelected = false,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
