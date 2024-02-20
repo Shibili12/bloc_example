@@ -15,6 +15,9 @@ import 'package:bloc_example/notification_using_bloc/bloc/notification_bloc.dart
 import 'package:bloc_example/notification_using_bloc/notificationpage.dart';
 import 'package:bloc_example/payment_integration/paymentscreen.dart';
 import 'package:bloc_example/payment_integration/bloc/razorpay_bloc.dart';
+import 'package:bloc_example/slider&switch_using%20bloc/bloc/slider_bloc.dart';
+import 'package:bloc_example/slider&switch_using%20bloc/bloc/switch_bloc.dart';
+import 'package:bloc_example/slider&switch_using%20bloc/uipage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,9 +44,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => CartBloc()),
         BlocProvider(create: (context) => InitialBloc()),
         BlocProvider(create: (context) => MultipleBloc()),
+        BlocProvider(create: (context) => SwitchBloc()),
+        BlocProvider(create: (context) => SliderBloc()),
       ],
       child: MaterialApp(
-        home: Userpage(),
+        home: UiPage(),
         theme: ThemeData(
           useMaterial3: false,
         ),
