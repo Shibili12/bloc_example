@@ -18,6 +18,8 @@ import 'package:bloc_example/payment_integration/bloc/razorpay_bloc.dart';
 import 'package:bloc_example/slider&switch_using%20bloc/bloc/slider_bloc.dart';
 import 'package:bloc_example/slider&switch_using%20bloc/bloc/switch_bloc.dart';
 import 'package:bloc_example/slider&switch_using%20bloc/uipage.dart';
+import 'package:bloc_example/todoapp_using_bloc/bloc/todo_bloc.dart';
+import 'package:bloc_example/todoapp_using_bloc/todo_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,9 +48,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => MultipleBloc()),
         BlocProvider(create: (context) => SwitchBloc()),
         BlocProvider(create: (context) => SliderBloc()),
+        BlocProvider(create: (context) => TodoBloc()),
       ],
       child: MaterialApp(
-        home: UiPage(),
+        home: TodoScreen(),
         theme: ThemeData(
           useMaterial3: false,
         ),
