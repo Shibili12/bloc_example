@@ -83,7 +83,13 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                             }
                           },
                         ),
-                        title: Text(item.value),
+                        title: Text(
+                          item.value,
+                          style: TextStyle(
+                              color: state.temFavlist.contains(item)
+                                  ? Colors.red
+                                  : Colors.black),
+                        ),
                         trailing: IconButton(
                             onPressed: () {
                               FavitemModel itemModel = FavitemModel(
