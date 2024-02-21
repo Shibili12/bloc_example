@@ -6,6 +6,9 @@ import 'package:bloc_example/apicrud/intialloading_example/page/todoPage.dart';
 
 import 'package:bloc_example/apicrud/multiple_Api_Call/bloc/multiple_bloc.dart';
 import 'package:bloc_example/apicrud/multiple_Api_Call/pages/homepage.dart';
+import 'package:bloc_example/favoriteapp_using_bloc/bloc/favourite_bloc.dart';
+import 'package:bloc_example/favoriteapp_using_bloc/favourite_screen.dart';
+import 'package:bloc_example/favoriteapp_using_bloc/repository/fav_repository.dart';
 import 'package:bloc_example/firebase_options.dart';
 import 'package:bloc_example/imagepick_usingbloc/bloc/image_picker_bloc.dart';
 import 'package:bloc_example/imagepick_usingbloc/imagescreen.dart';
@@ -49,9 +52,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => SwitchBloc()),
         BlocProvider(create: (context) => SliderBloc()),
         BlocProvider(create: (context) => TodoBloc()),
+        BlocProvider(create: (context) => FavouriteBloc(FavouriteRepository())),
       ],
       child: MaterialApp(
-        home: TodoScreen(),
+        home: FavouriteScreen(),
         theme: ThemeData(
           useMaterial3: false,
         ),
